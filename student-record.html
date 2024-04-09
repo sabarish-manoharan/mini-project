@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student-records</title>
+</head>
+
+<body>
+    <h2 id="title">STUDENT FORM</h2>
+    <center>
+        <form>
+            <label for="input1">Name</label>
+            <input type="text" id="inpu1" placeholder="enter your name"><br>
+            <label for="input2">Age</label>
+            <input type="number" id="inpu2" placeholder="enter your age"><br>
+
+            <label for="input4">Course</label>
+            <input type="text" id="inpu3" placeholder="enter your course"><br>
+            <label for="input5">e-mail</label>
+            <input type="text" id="inpu4" class="inpu" placeholder="enter your mail-id"><br>
+
+        </form>
+        <button id="b" onclick="add()">Save</button>
+
+
+            <table border="1">
+                <tr>
+                    <td>NAME</td>
+                    <td>Age</td>
+
+                    <td>Course</td>
+                    <td>Mail-id</td>
+                    <td>Action</td>
+                </tr>
+            </table>
+    </center>
+    <style>
+        body {
+            margin: 0%;
+            padding: 0%;
+
+        }
+
+        #title {
+            text-align: center;
+        }
+
+        form {
+            width: fit-content;
+            border: 2px grey solid;
+
+            margin-bottom: 50px;
+            padding: 10px;
+        }
+
+        input {
+            border: none;
+            border-bottom: 1px solid grey;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        label {
+            margin: 10px;
+            margin-right: 30px;
+            padding: 5px;
+        }
+
+        #b {
+            width: 25%;
+            padding: 10px;
+            border: none;
+            background: cadetblue;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+        }
+
+        table {
+            padding: 5px;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        #but {
+                
+            padding: 5px;
+            background: tan;
+            border: 1px grey solid;
+            border-radius: 2px;
+        }
+    </style>
+    <script>
+        var inpu1 = document.getElementById("inpu1");
+        var inpu2 = document.getElementById("inpu2");
+        var inpu3 = document.getElementById("inpu3");
+        var inpu4 = document.getElementById("inpu4");
+        var tables = document.querySelector("table");
+
+        function add() {
+            var row = document.createElement("tr");
+            row.innerHTML = "<td>" + inpu1.value + '</td>' + '<td>' + inpu2.value + '</td>' + '<td>' + inpu3.value + '</td>' + '<td>' + inpu4.value + '</td>' + '<button id=\"but\" onclick=\"rem(event)\">Delete</button>' + "</td>";
+
+            tables.append(row)
+
+        }
+        function rem(event) {
+            event.target.parentElement.remove();
+        }
+    </script>
+</body>
+
+</html>
